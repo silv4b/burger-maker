@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Message :msg="msg" v-show="msg"/>
+    <Message :msg="msg" v-show="msg" />
     <br />
     <div>
       <form id="burger-form" @submit="createBurger($event)">
@@ -18,7 +18,7 @@
         <div class="input-container">
           <label for="pao">Escolha o seu pão:</label>
           <select name="pao" id="pao" v-model="pao">
-            <option>Selecione o seu pão</option>
+            <option value="">Selecione o seu pão</option>
             <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">
               {{ pao.tipo }}
             </option>
@@ -28,7 +28,7 @@
         <div class="input-container">
           <label for="carne">Escolha o sua carne:</label>
           <select name="carne" id="carne" v-model="carne">
-            <option>Selecione a sua carne</option>
+            <option value="">Selecione a sua carne</option>
             <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">
               {{ carne.tipo }}
             </option>
@@ -48,7 +48,7 @@
               v-model="molhos"
               :value="molho.tipo"
             />
-            <spam>{{ molho.tipo }}</spam>
+            <p>{{ molho.tipo }}</p>
           </div>
         </div>
 
@@ -67,7 +67,7 @@
               v-model="opcionais"
               :value="opcional.tipo"
             />
-            <spam>{{ opcional.tipo }}</spam>
+            <p>{{ opcional.tipo }}</p>
           </div>
         </div>
 
@@ -115,20 +115,27 @@ export default {
     async createBurger(e) {
       e.preventDefault();
 
-      const data = {    
+      if (
+        (this.nome == "") | (this.carne == "") |
+        (this.pao == "")  | (this.molhos == "")
+      ) {
+        alert("Não foi possível fazer o seu pedido!");
+        return false;
+      }
+      const data = {
         nome: this.nome,
         carne: this.carne,
         pao: this.pao,
         opcionais: Array.from(this.opcionais),
         molhos: Array.from(this.molhos),
-        status: "Solicitado"
+        status: "Solicitado",
       };
 
       const dataJson = JSON.stringify(data); //converte o objeto em texto
-      const req = await fetch("http://localhost:3000/burgers",{
+      const req = await fetch("http://localhost:3000/burgers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: dataJson
+        body: dataJson,
       });
 
       const res = await req.json();
@@ -138,7 +145,7 @@ export default {
       this.msg = `${res.nome}, seu pedido foi realizado com sucesso! 🍔❤️`;
 
       // limpar mensagem
-      setTimeout(() => this.msg = "", 3000);
+      setTimeout(() => (this.msg = ""), 3000);
 
       // limpar os campos
       this.nome = "";
@@ -201,11 +208,11 @@ select {
   margin-bottom: 20px;
 }
 
-.checkbox-container spam .checkbox-container input {
+.checkbox-container p .checkbox-container input {
   width: auto;
 }
 
-.checkbox-container spam {
+.checkbox-container p {
   margin-left: 6px;
   font-weight: bold;
 }

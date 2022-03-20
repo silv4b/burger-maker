@@ -1,5 +1,5 @@
 <template>
-  <NavBar :logo="logo_src" :alt="app_name" />
+  <NavBar :logo="logo_src" />
   <router-view />
   <Footer />
 </template>
@@ -16,17 +16,16 @@ export default {
   data() {
     return {
       logo_src: "/img/logo.png",
-      app_name: "Make Your Burger"
-    }
-  }
+    };
+  },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -35,6 +34,7 @@ export default {
 .main-container {
   margin: 3rem;
   min-height: 30rem;
+  margin-top: 6rem;
 }
 
 h1 {
@@ -46,17 +46,17 @@ h1 {
 
 /* Webkit scroller bar */
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #222;
-	padding: 5px !important;
+  background: #222;
+  padding: 5px !important;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #fcba03;
-	border-radius: 10px !important;
-	margin-right: 5px !important;
+  background: #fcba03;
+  border-radius: 10px !important;
+  margin-right: 5px !important;
 }
 </style>
