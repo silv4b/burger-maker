@@ -1,7 +1,6 @@
 {
   "ingredientes": {
-    "paes": [
-      {
+    "paes": [{
         "id": 1,
         "tipo": "Italiano Branco"
       },
@@ -18,8 +17,7 @@
         "tipo": "Integral"
       }
     ],
-    "carnes": [
-      {
+    "carnes": [{
         "id": 1,
         "tipo": "Maminha"
       },
@@ -36,8 +34,7 @@
         "tipo": "Veggie burger"
       }
     ],
-    "opcionais": [
-      {
+    "opcionais": [{
         "id": 1,
         "tipo": "Bacon"
       },
@@ -63,8 +60,7 @@
       }
     ]
   },
-  "status": [
-    {
+  "status": [{
       "id": 1,
       "tipo": "Solicitado"
     },
@@ -77,29 +73,5 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": [
-    {
-      "nome": "Matheus Battisti",
-      "carne": "Picanha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Finalizado",
-      "id": 1
-    },
-    {
-      "nome": "João Coelho",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 4
-    }
-  ]
+  "burgers": []
 }
