@@ -44,6 +44,10 @@ h1 {
   color: #222;
 }
 
+ul {
+  list-style-type: none;
+}
+
 /* Webkit scroller bar */
 ::-webkit-scrollbar {
   width: 10px;

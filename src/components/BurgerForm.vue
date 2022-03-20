@@ -98,7 +98,6 @@ export default {
       carne: null,
       molhos: [],
       opcionais: [],
-      mensagem: null,
       msg: null,
     };
   },
@@ -113,15 +112,17 @@ export default {
       this.molhosdata = data.molhos;
     },
     async createBurger(e) {
+      
       e.preventDefault();
 
       if (
-        (this.nome == "") | (this.carne == "") |
-        (this.pao == "")  | (this.molhos == "")
+        (this.nome == "") | (this.carne  == "") |
+        (this.pao  == "") | (this.molhos == "")
       ) {
         alert("Não foi possível fazer o seu pedido!");
         return false;
       }
+
       const data = {
         nome: this.nome,
         carne: this.carne,
@@ -134,15 +135,14 @@ export default {
       const dataJson = JSON.stringify(data); //converte o objeto em texto
       const req = await fetch("http://localhost:3000/burgers", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type" : "application/json" },
         body: dataJson,
       });
 
       const res = await req.json();
-      console.clear();
 
       // mensagem de sistema
-      this.msg = `${res.nome}, seu pedido foi realizado com sucesso! 🍔❤️`;
+      this.msg = `${res.nome}, seu pedido foi realizado com sucesso! 🍔`;
 
       // limpar mensagem
       setTimeout(() => (this.msg = ""), 3000);
@@ -151,13 +151,12 @@ export default {
       this.nome = "";
       this.carne = "";
       this.pao = "";
-      this.opcionais = "";
-      this.molhos = "";
+      this.opcionais = [];
+      this.molhos = [];
     },
   },
   mounted() {
     this.getIngredientes();
-    console.clear();
   },
 };
 </script>

@@ -107,5 +107,49 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "Bruno Borges",
+      "carne": "Maminha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Cheddar"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Mostarda"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "Mariana Medeiros",
+      "carne": "Alcatra",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Tomate",
+        "Cebola roxa"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Molho Verde"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "Manoela",
+      "carne": "Picanha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "molhos": [
+        "Molho Barbeque"
+      ],
+      "status": "Solicitado",
+      "id": 3
+    }
+  ]
 }
