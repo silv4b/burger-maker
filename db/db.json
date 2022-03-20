@@ -15,6 +15,10 @@
       {
         "id": 4,
         "tipo": "Integral"
+      },
+      {
+        "id": 5,
+        "tipo": "Pão Americano"
       }
     ],
     "carnes": [{
@@ -57,6 +61,31 @@
       {
         "id": 4,
         "tipo": "Pepino"
+      }
+    ],
+    "molhos": [{
+        "id": 1,
+        "tipo": "Molho Barbeque"
+      },
+      {
+        "id": 2,
+        "tipo": "Molho Verde"
+      },
+      {
+        "id": 3,
+        "tipo": "Molho Rosê"
+      },
+      {
+        "id": 4,
+        "tipo": "Maionese"
+      },
+      {
+        "id": 5,
+        "tipo": "Ketchup"
+      },
+      {
+        "id": 6,
+        "tipo": "Mostarda"
       }
     ]
   },
