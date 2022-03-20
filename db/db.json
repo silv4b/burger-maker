@@ -1,6 +1,7 @@
 {
   "ingredientes": {
-    "paes": [{
+    "paes": [
+      {
         "id": 1,
         "tipo": "Italiano Branco"
       },
@@ -21,7 +22,8 @@
         "tipo": "Pão Americano"
       }
     ],
-    "carnes": [{
+    "carnes": [
+      {
         "id": 1,
         "tipo": "Maminha"
       },
@@ -38,7 +40,8 @@
         "tipo": "Veggie burger"
       }
     ],
-    "opcionais": [{
+    "opcionais": [
+      {
         "id": 1,
         "tipo": "Bacon"
       },
@@ -63,7 +66,8 @@
         "tipo": "Pepino"
       }
     ],
-    "molhos": [{
+    "molhos": [
+      {
         "id": 1,
         "tipo": "Molho Barbeque"
       },
@@ -89,7 +93,8 @@
       }
     ]
   },
-  "status": [{
+  "status": [
+    {
       "id": 1,
       "tipo": "Solicitado"
     },
@@ -102,5 +107,76 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "Bruno Silva",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Cheddar",
+        "Tomate",
+        "Pepino"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Molho Rosê"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "Manoel Josefino",
+      "carne": "Picanha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Cheddar",
+        "Cebola roxa"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Molho Verde",
+        "Molho Rosê"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "Joaquina Josefino",
+      "carne": "Picanha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Molho Verde"
+      ],
+      "status": "Solicitado",
+      "id": 3
+    },
+    {
+      "nome": "Zeca Baleiro",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Cheddar",
+        "Salame",
+        "Tomate",
+        "Cebola roxa",
+        "Pepino"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Molho Verde",
+        "Molho Rosê",
+        "Maionese",
+        "Ketchup",
+        "Mostarda"
+      ],
+      "status": "Solicitado",
+      "id": 4
+    }
+  ]
 }
