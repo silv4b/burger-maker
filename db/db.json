@@ -113,16 +113,60 @@
       "carne": "Maminha",
       "pao": "Italiano Branco",
       "opcionais": [
-        "Bacon",
-        "Cheddar",
-        "Salame"
+        "Bacon"
       ],
       "molhos": [
-        "Molho Barbeque",
-        "Molho Verde"
+        "Molho Verde",
+        "Molho Rosê",
+        "Maionese"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "Bruno Silva",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "molhos": [
+        "Molho Verde",
+        "Molho Rosê",
+        "Maionese"
       ],
       "status": "Produção",
-      "id": 1
+      "id": 3
+    },
+    {
+      "nome": "Bruno Silva",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "molhos": [
+        "Molho Verde",
+        "Molho Rosê",
+        "Maionese"
+      ],
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "Bruno Silva",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "molhos": [
+        "Molho Verde",
+        "Molho Rosê",
+        "Maionese"
+      ],
+      "status": "Solicitado",
+      "id": 5
     }
   ]
 }

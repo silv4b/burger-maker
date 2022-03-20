@@ -1,5 +1,6 @@
 <template>
   <div id="burger-table">
+    <Message :msg="msg" v-show="msg" />
     <div>
       <div id="burger-table-heading">
         <div class="order-id">#</div>
@@ -35,7 +36,11 @@
           </ul>
         </div>
         <div id="status">
-          <select name="status" class="status" @change="updateBurger($event, burger.id)">
+          <select
+            name="status"
+            class="status"
+            @change="updateBurger($event, burger.id)"
+          >
             <option
               v-for="stts in status"
               :key="stts.id"
@@ -55,16 +60,25 @@
 </template>
 
 <script>
+import Message from "../components/Message.vue";
+
 export default {
   name: "Dashboard",
+  components: {
+    Message,
+  },
   data() {
     return {
       burgers: null,
       burger_id: null,
       status: [],
+      msg: null
     };
   },
   methods: {
+    cleanMessage() {
+      setTimeout(() => (this.msg = ""), 3000);
+    },
     async getPedidos() {
       const req = await fetch("http://localhost:3000/burgers");
       const data = await req.json();
@@ -76,16 +90,17 @@ export default {
       const req = await fetch("http://localhost:3000/status");
       const data = await req.json();
       this.status = data;
-      console.log(data);
     },
     async deleteBurger(id) {
       const req = await fetch(`http://localhost:3000/burgers/${id}`, {
         method: "DELETE",
       });
-      const res = await req.json();
-      // mensagem do sistema
 
+      const res = await req.json();
       this.getPedidos();
+
+      this.msg = `Pedido Nº ${id} foi CANCELADO com sucesso! 🗑️`;
+      this.cleanMessage();
     },
     async updateBurger(event, id) {
       const option = event.target.value;
@@ -95,9 +110,12 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: dataJson,
       });
+
       const res = await req.json();
-      //console.table(res);
-    },
+      
+      this.msg = `Pedido Nº ${res.id} foi ATUALIZADO para ${res.status} com sucesso! ✅`;
+      this.cleanMessage();
+    },    
   },
   mounted() {
     this.getPedidos();

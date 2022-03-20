@@ -8,7 +8,7 @@
 export default {
   name: "Message",
   props: {
-    msg: String
+    msg: String,
   }
 };
 </script>
@@ -27,5 +27,4 @@ export default {
   margin: 30px auto;
   text-align: center;
 }
-
 </style>
