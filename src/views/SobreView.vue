@@ -1,5 +1,5 @@
 <template>
-  <div class="sobre">
+  <div class="main-container">
     <h1>Sobre</h1>
   </div>
 </template>
