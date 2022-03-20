@@ -19,7 +19,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 10px solid #fcba03;
+  border-bottom: 12px solid #fcba03;
 }
 
 #main-banner h1 {

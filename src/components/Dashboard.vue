@@ -34,11 +34,20 @@
             </li>
           </ul>
         </div>
-        <div>
-          <select name="status" class="status">
-            <option value="">Status</option>
+        <div id="status">
+          <select name="status" class="status" @change="updateBurger($event, burger.id)">
+            <option
+              v-for="stts in status"
+              :key="stts.id"
+              :value="stts.tipo"
+              :selected="burger.status == stts.tipo"
+            >
+              {{ stts.tipo }}
+            </option>
           </select>
-          <button class="delete-btn">Cancelar</button>
+          <button @click="deleteBurger(burger.id)" class="delete-btn">
+            Cancelar
+          </button>
         </div>
       </div>
     </div>
@@ -60,9 +69,34 @@ export default {
       const req = await fetch("http://localhost:3000/burgers");
       const data = await req.json();
       this.burgers = data;
-      console.table(data);
+      // Resgata os status de pedidos
+      this.getStatus();
+    },
+    async getStatus() {
+      const req = await fetch("http://localhost:3000/status");
+      const data = await req.json();
+      this.status = data;
+      console.log(data);
+    },
+    async deleteBurger(id) {
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "DELETE",
+      });
+      const res = await req.json();
+      // mensagem do sistema
 
-      // resgatar estados do db.json
+      this.getPedidos();
+    },
+    async updateBurger(event, id) {
+      const option = event.target.value;
+      const dataJson = JSON.stringify({ status: option });
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+      const res = await req.json();
+      //console.table(res);
     },
   },
   mounted() {
@@ -84,21 +118,21 @@ export default {
 }
 #burger-table-heading {
   font-weight: bold;
-  padding: 12px;
+  padding: 10px;
   border-bottom: 3px solid #333;
 }
 .burger-table-row {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border-bottom: 1px solid #ccc;
 }
 #burger-table-heading div,
 .burger-table-row div {
-  width: 15%;
+  width: 14%;
 }
 #burger-table-heading .order-id,
 .burger-table-row .order-number {
-  width: 4%;
+  width: 3%;
 }
 select {
   padding: 12px 6px;
@@ -119,5 +153,9 @@ select {
 .delete-btn:hover {
   background-color: #fcba03;
   color: #222;
+}
+
+#status {
+  width: auto;
 }
 </style>
