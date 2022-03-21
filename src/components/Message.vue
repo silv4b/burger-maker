@@ -1,6 +1,7 @@
 <template>
   <div class="message-container">
     <p>{{ msg }}</p>
+   <button @click="$emit('cleanMessage')">Limpar Mensagem</button>
   </div>
 </template>
 
@@ -10,23 +11,15 @@ export default {
   props: {
     msg: {
       type: String,
-      required: true,
-      defaulr: ""
+      required: true
     },
   },
-  methods: {
-    cleanMessage() {
-      setTimeout(() => (this.msg = ""), 3000);
-    },
-  },
+  emits: ['cleanMessage']  
 };
 </script>
 
 <style scoped>
 .message-container {
-  /*color: #004085;
-  background-color: #cce5ff;
-  border: 2px solid #b8daff;*/
   color: #964d05;
   background-color: #fce1c6;
   border: 2px solid #ff8a15;

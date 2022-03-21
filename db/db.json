@@ -109,20 +109,59 @@
   ],
   "burgers": [
     {
-      "nome": "Mariana",
-      "carne": "Alcatra",
+      "nome": "Bruno",
+      "carne": "Maminha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "molhos": [
+        "Molho Barbeque",
+        "Molho Verde"
+      ],
+      "status": "Produção",
+      "id": 1
+    },
+    {
+      "nome": "Manoel",
+      "carne": "Maminha",
       "pao": "Parmesão e Orégano",
       "opcionais": [
-        "Cheddar"
+        "Bacon"
       ],
       "molhos": [
         "Molho Barbeque"
       ],
       "status": "Solicitado",
-      "id": 1
+      "id": 2
     },
     {
-      "nome": "José",
+      "nome": "Manoela",
+      "carne": "Veggie burger",
+      "pao": "3 Queijos",
+      "opcionais": [],
+      "molhos": [
+        "Molho Barbeque"
+      ],
+      "status": "Produção",
+      "id": 3
+    },
+    {
+      "nome": "Josefia",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "molhos": [
+        "Molho Barbeque"
+      ],
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "Daniel",
       "carne": "Alcatra",
       "pao": "3 Queijos",
       "opcionais": [
@@ -132,45 +171,7 @@
         "Molho Barbeque"
       ],
       "status": "Solicitado",
-      "id": 2
-    },
-    {
-      "nome": "asd",
-      "carne": "Veggie burger",
-      "pao": "Integral",
-      "opcionais": [],
-      "molhos": [],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
-      "nome": "Junior",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [],
-      "molhos": [],
-      "status": "Solicitado",
-      "id": 4
-    },
-    {
-      "nome": "asdas",
-      "carne": "Alcatra",
-      "pao": "Integral",
-      "opcionais": [],
-      "molhos": [
-        "Molho Rosê"
-      ],
-      "status": "Solicitado",
       "id": 5
-    },
-    {
-      "nome": "asdasd",
-      "carne": "Picanha",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [],
-      "molhos": [],
-      "status": "Solicitado",
-      "id": 6
     }
   ]
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Message :msg="msg" v-show="msg" />
+    <Message :msg="msg" @msg="msg" v-show="msg" />
     <br />
     <div>
       <form id="burger-form" @submit="createBurger($event)">

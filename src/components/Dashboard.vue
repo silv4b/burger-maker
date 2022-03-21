@@ -1,6 +1,6 @@
 <template>
   <div id="burger-table">
-    <Message :msg="msg" v-show="msg" />
+    <Message v-show="msg" :msg="msg" @cleanMessage="cleanMessage" />
     <div>
       <div id="burger-table-heading">
         <div class="order-id">#</div>
@@ -19,10 +19,7 @@
         <div>{{ burger.pao }}</div>
         <div>{{ burger.carne }}</div>
         <div>
-          <ul>
-            <li v-for="(opcional, index) in burger.opcionais" :key="index">
-              {{ opcional }}
-            </li>
+          <ul>           
             <li v-for="(molho, index) in burger.molhos" :key="index">
               {{ molho }}
             </li>
@@ -77,7 +74,8 @@ export default {
   },
   methods: {
     cleanMessage() {
-      setTimeout(() => (this.msg = ""), 3000);
+      console.log("BOTÃO CLICADO!");
+      this.msg = "";
     },
     async getPedidos() {
       const req = await fetch("http://localhost:3000/burgers");
@@ -100,7 +98,7 @@ export default {
       this.getPedidos();
 
       this.msg = `Pedido Nº ${id} foi CANCELADO com sucesso! 🗑️`;
-      this.cleanMessage();
+      //this.cleanMessage();
     },
     async updateBurger(event, id) {
       const option = event.target.value;
@@ -114,7 +112,7 @@ export default {
       const res = await req.json();
       
       this.msg = `Pedido Nº ${res.id} foi ATUALIZADO para ${res.status} com sucesso! ✅`;
-      this.cleanMessage();
+      //this.cleanMessage();
     },    
   },
   mounted() {
@@ -138,13 +136,13 @@ export default {
 
 #burger-table-heading {
   font-weight: bold;
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 3px solid #333;
 }
 
 .burger-table-row {
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 1px solid #ccc;
 }
 
