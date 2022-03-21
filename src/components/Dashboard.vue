@@ -128,34 +128,46 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 #burger-table-heading,
 #burger-table-rows,
 .burger-table-row {
   display: flex;
   flex-wrap: wrap;
 }
+
 #burger-table-heading {
   font-weight: bold;
   padding: 10px;
   border-bottom: 3px solid #333;
 }
+
 .burger-table-row {
   width: 100%;
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
+
 #burger-table-heading div,
 .burger-table-row div {
   width: 14%;
 }
+
 #burger-table-heading .order-id,
 .burger-table-row .order-number {
   width: 3%;
 }
+
 select {
   padding: 12px 6px;
   margin-right: 12px;
+  border-radius: 6px;
 }
+
+button {
+  border-radius: 6px;
+}
+
 .delete-btn {
   background-color: #222;
   color: #fcba03;

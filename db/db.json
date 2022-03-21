@@ -109,64 +109,68 @@
   ],
   "burgers": [
     {
-      "nome": "Bruno Silva",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
+      "nome": "Mariana",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
       "opcionais": [
-        "Bacon"
+        "Cheddar"
       ],
       "molhos": [
-        "Molho Verde",
-        "Molho Rosê",
-        "Maionese"
+        "Molho Barbeque"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "José",
+      "carne": "Alcatra",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Cheddar"
+      ],
+      "molhos": [
+        "Molho Barbeque"
       ],
       "status": "Solicitado",
       "id": 2
     },
     {
-      "nome": "Bruno Silva",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon"
-      ],
-      "molhos": [
-        "Molho Verde",
-        "Molho Rosê",
-        "Maionese"
-      ],
-      "status": "Produção",
+      "nome": "asd",
+      "carne": "Veggie burger",
+      "pao": "Integral",
+      "opcionais": [],
+      "molhos": [],
+      "status": "Solicitado",
       "id": 3
     },
     {
-      "nome": "Bruno Silva",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon"
-      ],
-      "molhos": [
-        "Molho Verde",
-        "Molho Rosê",
-        "Maionese"
-      ],
+      "nome": "Junior",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [],
+      "molhos": [],
       "status": "Solicitado",
       "id": 4
     },
     {
-      "nome": "Bruno Silva",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon"
-      ],
+      "nome": "asdas",
+      "carne": "Alcatra",
+      "pao": "Integral",
+      "opcionais": [],
       "molhos": [
-        "Molho Verde",
-        "Molho Rosê",
-        "Maionese"
+        "Molho Rosê"
       ],
       "status": "Solicitado",
       "id": 5
+    },
+    {
+      "nome": "asdasd",
+      "carne": "Picanha",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [],
+      "molhos": [],
+      "status": "Solicitado",
+      "id": 6
     }
   ]
 }

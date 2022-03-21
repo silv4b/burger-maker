@@ -8,8 +8,17 @@
 export default {
   name: "Message",
   props: {
-    msg: String,
-  }
+    msg: {
+      type: String,
+      required: true,
+      defaulr: ""
+    },
+  },
+  methods: {
+    cleanMessage() {
+      setTimeout(() => (this.msg = ""), 3000);
+    },
+  },
 };
 </script>
 

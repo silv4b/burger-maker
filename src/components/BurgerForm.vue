@@ -12,13 +12,13 @@
             name="nome"
             v-model="nome"
             placeholder="Digite o seu nome."
+            required
           />
         </div>
 
         <div class="input-container">
           <label for="pao">Escolha o seu pão:</label>
-          <select name="pao" id="pao" v-model="pao">
-            <option value="">Selecione o seu pão</option>
+          <select name="pao" id="pao" v-model="pao" required>
             <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">
               {{ pao.tipo }}
             </option>
@@ -27,8 +27,7 @@
 
         <div class="input-container">
           <label for="carne">Escolha o sua carne:</label>
-          <select name="carne" id="carne" v-model="carne">
-            <option value="">Selecione a sua carne</option>
+          <select name="carne" id="carne" v-model="carne" required>
             <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">
               {{ carne.tipo }}
             </option>
@@ -36,7 +35,9 @@
         </div>
 
         <div id="molhos-container" class="input-container">
-          <label id="molhos-title" for="molhos">Selecione os molhos:</label>
+          <label id="molhos-title" for="molhos" required
+            >Selecione os molhos:</label
+          >
           <div
             class="checkbox-container"
             v-for="molho in molhosdata"
@@ -47,8 +48,9 @@
               name="molhos"
               v-model="molhos"
               :value="molho.tipo"
+              :id="molho.tipo"
             />
-            <p>{{ molho.tipo }}</p>
+            <label :for="molho.tipo">{{ molho.tipo }}</label>
           </div>
         </div>
 
@@ -66,8 +68,9 @@
               name="opcionais"
               v-model="opcionais"
               :value="opcional.tipo"
+              :id="opcional.id"
             />
-            <p>{{ opcional.tipo }}</p>
+            <label :for="opcional.id">{{ opcional.tipo }}</label>
           </div>
         </div>
 
@@ -112,12 +115,11 @@ export default {
       this.molhosdata = data.molhos;
     },
     async createBurger(e) {
-      
       e.preventDefault();
 
       if (
-        (this.nome == "") | (this.carne  == "") |
-        (this.pao  == "") | (this.molhos == "")
+        (this.nome == "") || (this.carne  == "") ||
+        (this.pao  == "") || (this.molhos == [])
       ) {
         alert("Não foi possível fazer o seu pedido!");
         return false;
@@ -135,7 +137,7 @@ export default {
       const dataJson = JSON.stringify(data); //converte o objeto em texto
       const req = await fetch("http://localhost:3000/burgers", {
         method: "POST",
-        headers: { "Content-Type" : "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: dataJson,
       });
 
@@ -202,9 +204,16 @@ select {
 
 .checkbox-container {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   width: 50%;
   margin-bottom: 20px;
+}
+
+.checkbox-container label {
+  border-left: 4px solid white !important;
+  padding: 0 !important;
+  margin: 0 12px 0 10px !important;
+  font-weight: normal;
 }
 
 .checkbox-container p .checkbox-container input {
