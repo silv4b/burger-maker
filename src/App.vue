@@ -1,14 +1,17 @@
 <template>
   <NavBar :logo="logo_src" />
   <router-view />
+  <Footer />
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   components: {
     NavBar,
+    Footer
   },
   data() {
     return {
@@ -30,8 +33,18 @@ export default {
 
 .main-container {
   margin: 3rem;
-  min-height: 30rem;
+  min-height: 100vh;
   margin-top: 6rem;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 80% !important;
+  left: 50% !important;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 999 !important;
 }
 
 h1 {
@@ -43,6 +56,14 @@ h1 {
 
 ul {
   list-style-type: none;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Webkit scroller bar */

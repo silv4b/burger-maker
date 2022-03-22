@@ -1,7 +1,7 @@
 <template>
   <div class="message-container">
     <p>{{ msg }}</p>
-   <button @click="$emit('cleanMessage')">Limpar Mensagem</button>
+   <button @click="$emit('cleanMessage')">Tudo certo! 🥪</button>
   </div>
 </template>
 
@@ -17,12 +17,9 @@ export default {
   emits: ['cleanMessage'],
   methods: {
     retornaEmitMsg() {
-      // this.$emit('cleanMessage');
-      setTimeout(() => (this.$emit('cleanMessage')), 3000);
-      // verificar o erro aqui 😒
+      this.$emit('cleanMessage');
     },
   },
-  mounted: this.retornaEmitMsg()
 };
 </script>
 
@@ -36,5 +33,18 @@ export default {
   max-width: 432px;
   margin: 30px auto;
   text-align: center;
+}
+
+button {
+  margin-top: 10px !important;
+  background-color: #222;
+  color: #fcba03;
+  border: 2px solid #222;
+  padding: 8px;
+  font-size: 12px;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 4px;
 }
 </style>

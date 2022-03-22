@@ -13,7 +13,8 @@ export default {
 <style scoped>
 #footer {
   margin-top: max;
-  height: 6rem;
+  height: 3rem;
+  font-size: 0.8rem;
   background-color: #222;
   border-top: #FCBA03;
   color: #FCBA03;

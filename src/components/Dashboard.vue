@@ -129,6 +129,7 @@ export default {
 <style scoped>
 #burger-table {
   max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -153,7 +154,11 @@ export default {
 
 #burger-table-heading div,
 .burger-table-row div {
-  width: 14%;
+  width: 15%;
+}
+
+.burger-table-row div {
+  width: 15%;
 }
 
 #burger-table-heading .order-id,
