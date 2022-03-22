@@ -14,7 +14,15 @@ export default {
       required: true
     },
   },
-  emits: ['cleanMessage']  
+  emits: ['cleanMessage'],
+  methods: {
+    retornaEmitMsg() {
+      // this.$emit('cleanMessage');
+      setTimeout(() => (this.$emit('cleanMessage')), 3000);
+      // verificar o erro aqui 😒
+    },
+  },
+  mounted: this.retornaEmitMsg()
 };
 </script>
 

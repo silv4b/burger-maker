@@ -133,7 +133,7 @@
       "molhos": [
         "Molho Barbeque"
       ],
-      "status": "Produção",
+      "status": "Solicitado",
       "id": 2
     },
     {
@@ -146,8 +146,34 @@
       "molhos": [
         "Molho Barbeque"
       ],
-      "status": "Solicitado",
+      "status": "Produção",
       "id": 5
+    },
+    {
+      "nome": "Manoel",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Salame"
+      ],
+      "molhos": [
+        "Molho Barbeque"
+      ],
+      "status": "Solicitado",
+      "id": 6
+    },
+    {
+      "nome": "Manoela",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Cheddar"
+      ],
+      "molhos": [
+        "Mostarda"
+      ],
+      "status": "Solicitado",
+      "id": 7
     }
   ]
 }

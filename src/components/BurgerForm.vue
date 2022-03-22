@@ -101,10 +101,14 @@ export default {
       carne: null,
       molhos: [],
       opcionais: [],
-      msg: null,
+      msg: "",
     };
   },
   methods: {
+    cleanMessage(new_msg) {
+      this.msg = new_msg;
+      console.log(this.msg);
+    },
     async getIngredientes() {
       const req = await fetch("http://localhost:3000/ingredientes");
       const data = await req.json();
@@ -144,10 +148,8 @@ export default {
       const res = await req.json();
 
       // mensagem de sistema
-      this.msg = `${res.nome}, seu pedido foi realizado com sucesso! 🍔`;
-
-      // limpar mensagem
-      setTimeout(() => (this.msg = ""), 3000);
+      this.cleanMessage(`${res.nome}, seu pedido foi realizado com sucesso! 🍔`);
+      setTimeout(() => (this.cleanMessage("")), 3000);
 
       // limpar os campos
       this.nome = "";

@@ -69,16 +69,16 @@ export default {
       burgers: null,
       burger_id: null,
       status: [],
-      msg: null
+      msg: "",
     };
   },
   methods: {
     /** nome da funcão que também é chamada através do $emit
      * no componente de mensagens, pelo mesmo nome.
      */
-    cleanMessage() {
-      console.log("BOTÃO CLICADO!");
-      this.msg = "";
+    cleanMessage(new_msg) {
+      this.msg = new_msg;
+      console.log(this.msg);
     },
     async getPedidos() {
       const req = await fetch("http://localhost:3000/burgers");
@@ -100,8 +100,9 @@ export default {
       const res = await req.json();
       this.getPedidos();
 
-      this.msg = `Pedido Nº ${id} foi CANCELADO com sucesso! 🗑️`;
-      //this.cleanMessage();
+      // mensagem de sistema
+      this.cleanMessage(`Pedido Nº ${id} foi CANCELADO com sucesso! 🗑️`);
+      setTimeout(() => (this.cleanMessage("")), 3000);
     },
     async updateBurger(event, id) {
       const option = event.target.value;
@@ -114,8 +115,9 @@ export default {
 
       const res = await req.json();
       
-      this.msg = `Pedido Nº ${res.id} foi ATUALIZADO para ${res.status} com sucesso! ✅`;
-      //this.cleanMessage();
+      this.cleanMessage(`Pedido Nº ${res.id} foi ATUALIZADO para ${res.status} com sucesso! 
+      ✅`);
+      setTimeout(() => (this.cleanMessage("")), 3000);
     },    
   },
   mounted() {
