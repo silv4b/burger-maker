@@ -166,6 +166,7 @@ export default {
 <style scoped>
 #burger-form {
   max-width: 27rem;
+  margin-bottom: 10rem !important;
   margin: 0 auto;
 }
 

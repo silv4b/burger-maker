@@ -133,32 +133,8 @@
       "molhos": [
         "Molho Barbeque"
       ],
-      "status": "Solicitado",
-      "id": 2
-    },
-    {
-      "nome": "Manoela",
-      "carne": "Veggie burger",
-      "pao": "3 Queijos",
-      "opcionais": [],
-      "molhos": [
-        "Molho Barbeque"
-      ],
       "status": "Produção",
-      "id": 3
-    },
-    {
-      "nome": "Josefia",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon"
-      ],
-      "molhos": [
-        "Molho Barbeque"
-      ],
-      "status": "Solicitado",
-      "id": 4
+      "id": 2
     },
     {
       "nome": "Daniel",

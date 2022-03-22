@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/" id="logo-url">
-      <img :src="logo" id="logo" />
-    </router-link>
+    <router-link to="/" id="logo-url"
+      ><img :src="logo" id="logo"
+    /></router-link>
     <router-link to="/">Início</router-link>
     <router-link to="/pedidos">Pedidos</router-link>
     <router-link to="/sobre">Sobre</router-link>

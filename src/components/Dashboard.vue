@@ -73,6 +73,9 @@ export default {
     };
   },
   methods: {
+    /** nome da funcão que também é chamada através do $emit
+     * no componente de mensagens, pelo mesmo nome.
+     */
     cleanMessage() {
       console.log("BOTÃO CLICADO!");
       this.msg = "";
