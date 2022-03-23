@@ -107,7 +107,7 @@ export default {
   methods: {
     cleanMessage(new_msg) {
       this.msg = new_msg;
-      console.log(this.msg);
+      //console.log(this.msg);
     },
     async getIngredientes() {
       const req = await fetch("http://localhost:3000/ingredientes");
@@ -213,7 +213,7 @@ select {
 }
 
 .checkbox-container label {
-  border-left: 4px solid white !important;
+  border-left: 4px solid transparent !important;
   padding: 0 !important;
   margin: 0 12px 0 10px !important;
   font-weight: normal;

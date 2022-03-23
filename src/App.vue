@@ -2,16 +2,19 @@
   <NavBar :logo="logo_src" />
   <router-view />
   <Footer />
+  <FabButton />
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
+import FabButton from "./components/ButtonTop.vue";      
 
 export default {
   components: {
     NavBar,
-    Footer
+    Footer,
+    FabButton,
   },
   data() {
     return {
@@ -40,7 +43,7 @@ export default {
 .center {
   margin: 0;
   position: absolute;
-  top: 80% !important;
+  top: 88% !important;
   left: 50% !important;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

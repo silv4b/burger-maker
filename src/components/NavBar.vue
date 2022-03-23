@@ -1,8 +1,8 @@
 <template>
-  <div id="nav">
-    <router-link to="/" id="logo-url"
-      ><img :src="logo" id="logo"
-    /></router-link>
+  <div id="nav" :class="{ 'navbar--hidden': !showNavbar }">
+    <router-link to="/" id="logo-url">
+      <img :src="logo" id="logo" />
+    </router-link>
     <router-link to="/">Início</router-link>
     <router-link to="/pedidos">Pedidos</router-link>
     <router-link to="/sobre">Sobre</router-link>
@@ -13,6 +13,31 @@
 export default {
   name: "NarBar",
   props: ["logo"],
+  data() {
+    return {
+      showNavbar: true,
+      lastScroll: 0,
+    }
+  },
+  methods: {
+    onScroll() {
+      const currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll < 0) {
+        return;
+      }
+      // this.showFabButton = currentScroll != 0;
+      this.showNavbar = currentScroll < this.lastScroll;
+      this.lastScroll = currentScroll;
+      //console.log(currentScroll);
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
 };
 </script>
 
@@ -27,6 +52,10 @@ export default {
   position: fixed;
   top: 0px;
   width: 100%;
+  z-index: 1000;
+  transform: translate3d(0, 0, 0);
+  transition: 0.3s all ease-in-out;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 #nav #logo-url {
@@ -49,5 +78,10 @@ export default {
 
 #nav a:hover {
   color: #fff;
+}
+
+#nav.navbar--hidden {
+  box-shadow: none;
+  transform: translate3d(0, -100%, 0);
 }
 </style>

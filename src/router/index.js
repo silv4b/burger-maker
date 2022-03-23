@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import InicioView from '../views/InicioView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import InicioView from '../views/InicioView.vue';
 //import SobreView from '../views/SobreView.vue'
 
 const routes = [
@@ -23,11 +23,11 @@ const routes = [
     name: 'sobre',
     component: () => import(/* webpackChunkName: "sobre" */ '../views/SobreView.vue')
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;

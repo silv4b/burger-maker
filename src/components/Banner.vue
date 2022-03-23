@@ -1,7 +1,7 @@
 <template>
   <div id="main-banner">
     <h1>Make Your Burger 🍔</h1>
-    <button @click="scroollDown()" class="center">AOBA</button>
+    <button @click="scroollDown()" class="button center">Monte o Seu 🍔</button>
   </div>
 </template>
 
@@ -10,21 +10,38 @@ export default {
   name: "Banner",
   methods: {
     scroollDown() {
-      window.scrollBy(0, 1000);
-    }
-  }
+      // height recebe o tamanho da div do banner através do query selector
+      const height = document.querySelector("#main-banner").offsetHeight;
+      // scroll down o tamanho da tela - 10px (border-botton amarela)
+      window.scrollBy(0, (height - 10));
+    },
+  },
 };
 </script>
 
 <style scoped>
-.center {
+.button {
+  background-color: #fcba03;
+  color: #222;
+  border: 4px solid #222;
+  padding: 10px 30px;
+  font-size: 30px;
   margin: 0;
+  cursor: pointer;
+  transition: 0.1s;
+  width: auto;
+  border-radius: 8px;
+  border-color: #222;
   position: absolute;
   top: 80%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  left: 90%;
   z-index: 999 !important;
+}
+
+.button:hover {
+  background-color: #222;
+  border: 0px solid #fcba03;
+  color: #fcba03;
 }
 
 #main-banner {

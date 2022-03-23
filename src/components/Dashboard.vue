@@ -78,7 +78,7 @@ export default {
      */
     cleanMessage(new_msg) {
       this.msg = new_msg;
-      console.log(this.msg);
+      //console.log(this.msg);
     },
     async getPedidos() {
       const req = await fetch("http://localhost:3000/burgers");
