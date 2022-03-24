@@ -19,7 +19,7 @@
         <div>{{ burger.pao }}</div>
         <div>{{ burger.carne }}</div>
         <div>
-          <ul>           
+          <ul>
             <li v-for="(molho, index) in burger.molhos" :key="index">
               {{ molho }}
             </li>
@@ -66,6 +66,7 @@ export default {
   },
   data() {
     return {
+      baseUrl: "https://json-fucking-server.herokuapp.com",
       burgers: null,
       burger_id: null,
       status: [],
@@ -81,19 +82,19 @@ export default {
       //console.log(this.msg);
     },
     async getPedidos() {
-      const req = await fetch("http://localhost:3000/burgers");
+      const req = await fetch(`${this.baseUrl}/burgers`);
       const data = await req.json();
       this.burgers = data;
       // Resgata os status de pedidos
       this.getStatus();
     },
     async getStatus() {
-      const req = await fetch("http://localhost:3000/status");
+      const req = await fetch(`${this.baseUrl}/status`);
       const data = await req.json();
       this.status = data;
     },
     async deleteBurger(id) {
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+      const req = await fetch(`${this.baseUrl}/burgers/${id}`, {
         method: "DELETE",
       });
 
@@ -102,23 +103,24 @@ export default {
 
       // mensagem de sistema
       this.cleanMessage(`Pedido Nº ${id} foi CANCELADO com sucesso! 🗑️`);
-      setTimeout(() => (this.cleanMessage("")), 3000);
+      setTimeout(() => this.cleanMessage(""), 3000);
     },
     async updateBurger(event, id) {
       const option = event.target.value;
       const dataJson = JSON.stringify({ status: option });
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+      const req = await fetch(`${this.baseUrl}/burgers/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: dataJson,
       });
 
       const res = await req.json();
-      
-      this.cleanMessage(`Pedido Nº ${res.id} foi ATUALIZADO para ${res.status} com sucesso! 
+
+      this
+        .cleanMessage(`Pedido Nº ${res.id} foi ATUALIZADO para ${res.status} com sucesso! 
       ✅`);
-      setTimeout(() => (this.cleanMessage("")), 3000);
-    },    
+      setTimeout(() => this.cleanMessage(""), 3000);
+    },
   },
   mounted() {
     this.getPedidos();

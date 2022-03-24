@@ -92,6 +92,7 @@ export default {
   },
   data() {
     return {
+      baseUrl: "https://json-fucking-server.herokuapp.com",
       paes: null,
       carnes: null,
       molhosdata: null,
@@ -110,7 +111,7 @@ export default {
       //console.log(this.msg);
     },
     async getIngredientes() {
-      const req = await fetch("http://localhost:3000/ingredientes");
+      const req = await fetch(`${this.baseUrl}/ingredientes`);
       const data = await req.json();
 
       this.paes = data.paes;
@@ -122,8 +123,10 @@ export default {
       e.preventDefault();
 
       if (
-        (this.nome == "") || (this.carne  == "") ||
-        (this.pao  == "") || (this.molhos == [])
+        this.nome == "" ||
+        this.carne == "" ||
+        this.pao == "" ||
+        this.molhos == []
       ) {
         alert("Não foi possível fazer o seu pedido!");
         return false;
@@ -139,7 +142,7 @@ export default {
       };
 
       const dataJson = JSON.stringify(data); //converte o objeto em texto
-      const req = await fetch("http://localhost:3000/burgers", {
+      const req = await fetch(`${this.baseUrl}/burgers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dataJson,
@@ -148,8 +151,10 @@ export default {
       const res = await req.json();
 
       // mensagem de sistema
-      this.cleanMessage(`${res.nome}, seu pedido foi realizado com sucesso! 🍔`);
-      setTimeout(() => (this.cleanMessage("")), 3000);
+      this.cleanMessage(
+        `${res.nome}, seu pedido foi realizado com sucesso! 🍔`
+      );
+      setTimeout(() => this.cleanMessage(""), 3000);
 
       // limpar os campos
       this.nome = "";
